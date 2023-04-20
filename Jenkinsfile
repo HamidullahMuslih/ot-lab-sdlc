@@ -15,5 +15,11 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage("Integration Tests") {
+            steps {
+                // will run integration tests if any
+                sh 'mvn verify'
+            }
+        }
     }
 }
