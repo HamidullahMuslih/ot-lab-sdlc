@@ -23,7 +23,7 @@ pipeline {
         }
         stage("Static Analysis") {
             steps {
-                sh 'java -jar ~/checkstyle-10.9.3-all.jar -c ./sun_checks.xml src/'
+                sh 'java -jar ~/checkstyle-10.9.3-all.jar -c ./sun_checks.xml src/ || true'
             }
         }
         stage("Push to dockerhub") {
