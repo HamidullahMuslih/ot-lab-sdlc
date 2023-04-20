@@ -21,5 +21,10 @@ pipeline {
                 sh 'mvn verify'
             }
         }
+        stage("Static Analysis") {
+            steps {
+                sh 'java -jar ~/checkstyle-10.9.3-all.jar -c ./sun_checks.xml src/'
+            }
+        }
     }
 }
