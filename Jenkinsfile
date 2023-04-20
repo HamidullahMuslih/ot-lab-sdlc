@@ -26,5 +26,11 @@ pipeline {
                 sh 'java -jar ~/checkstyle-10.9.3-all.jar -c ./sun_checks.xml src/'
             }
         }
+        stage("Push to dockerhub") {
+            steps {
+                sh 'docker build -t arnoldedev/ot-lab-sdlc .'
+                sh 'docker push arnoldedev/ot-lab-sdlc'
+            }
+        }
     }
 }
