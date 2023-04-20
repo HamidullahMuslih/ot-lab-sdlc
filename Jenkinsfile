@@ -32,5 +32,10 @@ pipeline {
                 sh 'docker push arnoldedev/ot-lab-sdlc'
             }
         }
+        stage("Deploy") {
+            steps {
+                sh 'docker compose up -d'
+            }
+        }
     }
 }

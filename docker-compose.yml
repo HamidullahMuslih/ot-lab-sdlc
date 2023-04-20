@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  webapp:
+    image: arnoldedev/ot-lab-sdlc
+    depends_on:
+      - vprodb
+      - vprocache01
+      - vprocache02
+      - vpromq01
+      - vprosearch01
+    ports:
+      - "8080:80"
+  vprodb:
+    image: mysql:5.7
+    environment:
+      - MYSQL_DATABASE=accounts
+      - MYSQL_ROOT_PASSWORD=vprodbpass
+    expose:
+      - "3306"
+  vprocache01:
+    image: memcached:1.6.19-alpine
+    expose:
+      - "11211"
+  vprocache02:
+    image: memcached:1.6.19-alpine
+    expose:
+      - "11211"
+  vpromq01:
+    image: rabbitmq:3.8-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "15672:15672"
+  vprosearch01:
+    image: elasticsearch:8.7.0
+    expose:
+      - "9300"
