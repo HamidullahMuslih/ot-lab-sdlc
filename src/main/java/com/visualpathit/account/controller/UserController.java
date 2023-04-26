@@ -44,7 +44,7 @@ public class UserController {
     public final String registration(final @ModelAttribute("userForm") User userForm, 
     	final BindingResult bindingResult, final Model model) {
     	
-        userValidator.validate(userForm, bindingResult);
+        // userValidator.validate(userForm, bindingResult);
         if (bindingResult.hasErrors()) {
             return "registration";
         }
