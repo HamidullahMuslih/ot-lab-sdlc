@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.55.0" timestamp="2024-04-15T14:03:12.375">
+<file name="/home/jenkins/workspace/lab3_devsecops/src/main/java/com/visualpathit/account/controller/ElasticSearchController.java">
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="21" rule="UnnecessaryImport" ruleset="Code Style" package="com.visualpathit.account.controller" class="ElasticSearchController" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.Map'
+</violation>
+<violation beginline="8" endline="8" begincolumn="1" endcolumn="79" rule="UnnecessaryImport" ruleset="Code Style" package="com.visualpathit.account.controller" class="ElasticSearchController" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder'
+</violation>
+<violation beginline="11" endline="11" begincolumn="1" endcolumn="51" rule="UnnecessaryImport" ruleset="Code Style" package="com.visualpathit.account.controller" class="ElasticSearchController" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'org.elasticsearch.action.index.IndexRequest'
+</violation>
+<violation beginline="15" endline="15" begincolumn="1" endcolumn="57" rule="UnnecessaryImport" ruleset="Code Style" package="com.visualpathit.account.controller" class="ElasticSearchController" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'org.elasticsearch.common.xcontent.XContentBuilder'
+</violation>
+<violation beginline="22" endline="22" begincolumn="1" endcolumn="60" rule="UnnecessaryImport" ruleset="Code Style" package="com.visualpathit.account.controller" class="ElasticSearchController" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'org.springframework.web.bind.annotation.RequestParam'
+</violation>
+<violation beginline="23" endline="23" begincolumn="1" endcolumn="60" rule="UnnecessaryImport" ruleset="Code Style" package="com.visualpathit.account.controller" class="ElasticSearchController" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'org.springframework.web.bind.annotation.ResponseBody'
+</violation>
+<violation beginline="25" endline="25" begincolumn="1" endcolumn="28" rule="UnnecessaryImport" ruleset="Code Style" package="com.visualpathit.account.controller" class="ElasticSearchController" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'com.google.gson.Gson'
+</violation>
+</file>
+<file name="/home/jenkins/workspace/lab3_devsecops/src/main/java/com/visualpathit/account/controller/FileUploadController.java">
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="22" rule="UnnecessaryImport" ruleset="Code Style" package="com.visualpathit.account.controller" class="FileUploadController" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.List'
+</violation>
+</file>
+<file name="/home/jenkins/workspace/lab3_devsecops/src/main/java/com/visualpathit/account/repository/UserRepository.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="22" rule="UnnecessaryImport" ruleset="Code Style" package="com.visualpathit.account.repository" class="UserRepository" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.List'
+</violation>
+<violation beginline="12" endline="12" begincolumn="42" endcolumn="42" rule="UnnecessarySemicolon" ruleset="Code Style" package="com.visualpathit.account.repository" class="UserRepository" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessarysemicolon" priority="3">
+Unnecessary semicolon
+</violation>
+</file>
+<file name="/home/jenkins/workspace/lab3_devsecops/src/main/java/com/visualpathit/account/service/ProducerService.java">
+<violation beginline="5" endline="5" begincolumn="12" endcolumn="50" rule="UnnecessaryModifier" ruleset="Code Style" package="com.visualpathit.account.service" class="ProducerService" method="produceMessage" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifier 'public' on method 'produceMessage': the method is declared in an interface type
+</violation>
+</file>
+<file name="/home/jenkins/workspace/lab3_devsecops/src/main/java/com/visualpathit/account/service/UserService.java">
+<violation beginline="15" endline="15" begincolumn="12" endcolumn="33" rule="UnnecessaryModifier" ruleset="Code Style" package="com.visualpathit.account.service" class="UserService" method="getList" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifier 'public' on method 'getList': the method is declared in an interface type
+</violation>
+</file>
+</pmd>
