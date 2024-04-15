@@ -3,7 +3,22 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+                sh 'mvn package -DskipTests'
+            }
+        }
+        stage('unit-tests') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('integration-tests') {
+            steps {
+                sh 'mvn integration-test'
+            }
+        }
+        stage('generate-report') {
+            steps {
+                sh 'mvn site'
             }
         }
     }

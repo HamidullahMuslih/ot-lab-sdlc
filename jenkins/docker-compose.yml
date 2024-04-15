@@ -10,6 +10,7 @@ services:
   jenkins:
     image: jenkins/jenkins:lts
     privileged: true
+    user: root
     container_name: jenkins
     ports:
       - 8080:8080
