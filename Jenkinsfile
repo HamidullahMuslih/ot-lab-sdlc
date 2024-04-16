@@ -26,7 +26,8 @@ pipeline {
         always {
             recordIssues(
                 enabledForFailure: true, aggregatingResults: true,
-                tools: [java(), checkStyle(pattern: '**/checkstyle-result.xml', reportEncoding: 'UTF-8')]
+                tools: [java(), checkStyle(pattern: '**/checkstyle-result.xml', reportEncoding: 'UTF-8')],
+                qualityGates: [[threshold: 500, type: 'TOTAL', criticality: 'FAILURE']]
             )
         }
     }
