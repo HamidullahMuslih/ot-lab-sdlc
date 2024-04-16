@@ -32,6 +32,9 @@ pipeline {
 //             }
             steps {
                 script {
+                    def dockerHome = tool 'docker'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+
                     def image = docker.build("e2xen/ot-lab3:latest")
                     image.push()
                 }
