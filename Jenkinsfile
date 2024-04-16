@@ -22,7 +22,7 @@ pipeline {
             }
         }
         stage("docker-build") {
-            agent { label { 'default' } }
+            agent { label 'default' }
 //             steps {
 //                 withCredentials([usernamePassword(credentialsId: 'e2xen-dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
 //                     sh 'docker build -t e2xen/ot-lab3:latest .'
