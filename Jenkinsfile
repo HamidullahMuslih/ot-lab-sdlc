@@ -26,7 +26,6 @@ pipeline {
             }
         }
         stage("docker-build") {
-//             agent { label 'default' }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'e2xen-dockerhub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                     sh 'docker build -t e2xen/ot-lab3:latest .'
@@ -34,15 +33,15 @@ pipeline {
                     sh 'docker push e2xen/ot-lab3:latest'
                 }
             }
-//             steps {
-//                 script {
-//                     def dockerHome = tool 'docker'
-//                     env.PATH = "${dockerHome}/bin:${env.PATH}"
-//
-//                     def image = docker.build("e2xen/ot-lab3:latest")
-//                     image.push()
-//                 }
-//             }
+        }
+        stage("deploy") {
+            agent { label 'deploy' }
+            steps {
+                sh 'docker pull e2xen/ot-lab3:latest'
+                sh 'docker stop container || true'
+                sh 'docker rm -f container || true'
+                sh 'docker run -p 8080:8080 -d --name container e2xen/ot-lab3:latest'
+            }
         }
     }
     post {
