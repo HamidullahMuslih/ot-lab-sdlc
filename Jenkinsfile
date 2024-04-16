@@ -23,8 +23,8 @@ pipeline {
         }
         stage("docker-build") {
             steps {
-                sh 'docker build -t e2xen/ot-lab3:${env.BUILD_ID} .'
-                sh 'docker push e2xen/ot-lab3:${env.BUILD_ID}'
+                sh 'docker build -t e2xen/ot-lab3:latest .'
+                sh 'docker push e2xen/ot-lab3:latest'
             }
         }
     }
