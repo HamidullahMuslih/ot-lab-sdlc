@@ -22,8 +22,10 @@ pipeline {
             }
         }
         stage("docker-build") {
-            def image = docker.build("e2xen/ot-lab3:${env.BUILD_ID}")
-            image.push()
+            steps {
+                sh 'docker build -t e2xen/ot-lab3:${env.BUILD_ID} .'
+                sh 'docker push e2xen/ot-lab3:${env.BUILD_ID}'
+            }
         }
     }
     post {
