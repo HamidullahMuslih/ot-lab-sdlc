@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  maven_build:
+    image: maven:3.9.6-openjdk-17
+    volumes:
+      - ./src/main:/app
+    working_dir: /app
+    command: mvn clean package
+
+  app:
+    image: feramin108/maven_lab3
+    ports:
+      - "5050:8080"
+    depends_on:
+      - maven_build
+
