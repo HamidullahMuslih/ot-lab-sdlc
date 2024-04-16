@@ -22,13 +22,16 @@ pipeline {
             }
         }
         stage("docker-build") {
-            agent any
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'e2xen-dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-                    sh 'docker build -t e2xen/ot-lab3:latest .'
-                    sh 'docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}'
-                    sh 'docker push e2xen/ot-lab3:latest'
-                }
+//             steps {
+//                 withCredentials([usernamePassword(credentialsId: 'e2xen-dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+//                     sh 'docker build -t e2xen/ot-lab3:latest .'
+//                     sh 'docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}'
+//                     sh 'docker push e2xen/ot-lab3:latest'
+//                 }
+//             }
+            script {
+                def image = docker.build("e2xen/ot-lab3:latest")
+                image.push()
             }
         }
     }
