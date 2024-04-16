@@ -1,5 +1,9 @@
 pipeline {
-    agent { docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' } }
+//     agent { docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' } }
+    agent any
+    tools {
+        maven 'apache-maven-3.0.1'
+    }
     stages {
         stage('build') {
             steps {
@@ -22,7 +26,7 @@ pipeline {
             }
         }
         stage("docker-build") {
-            agent { label 'default' }
+//             agent { label 'default' }
 //             steps {
 //                 withCredentials([usernamePassword(credentialsId: 'e2xen-dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
 //                     sh 'docker build -t e2xen/ot-lab3:latest .'
