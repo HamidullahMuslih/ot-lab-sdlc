@@ -28,9 +28,9 @@ pipeline {
         stage("docker-build") {
 //             agent { label 'default' }
             steps {
-                withCredentials([usernamePassword(credentialsId: 'e2xen-dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+                withCredentials([usernamePassword(credentialsId: 'e2xen-dockerhub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                     sh 'docker build -t e2xen/ot-lab3:latest .'
-                    sh 'docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}'
+                    sh 'docker login -u $USER -p $PASS'
                     sh 'docker push e2xen/ot-lab3:latest'
                 }
             }
