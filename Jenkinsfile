@@ -29,9 +29,11 @@ pipeline {
 //                     sh 'docker push e2xen/ot-lab3:latest'
 //                 }
 //             }
-            script {
-                def image = docker.build("e2xen/ot-lab3:latest")
-                image.push()
+            steps {
+                script {
+                    def image = docker.build("e2xen/ot-lab3:latest")
+                    image.push()
+                }
             }
         }
     }
