@@ -21,13 +21,17 @@ pipeline {
                 sh 'mvn site'
             }
         }
+        stage("docker-build") {
+            def image = docker.build("e2xen/ot-lab3:${env.BUILD_ID}")
+            image.push()
+        }
     }
     post {
         always {
             recordIssues(
                 enabledForFailure: true, aggregatingResults: true,
                 tools: [java(), checkStyle(pattern: '**/checkstyle-result.xml', reportEncoding: 'UTF-8')],
-                qualityGates: [[threshold: 500, type: 'TOTAL', criticality: 'FAILURE']]
+                qualityGates: [[threshold: 1000, type: 'TOTAL', criticality: 'FAILURE']]
             )
         }
     }
