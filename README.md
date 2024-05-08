@@ -11,4 +11,6 @@ throughout the software development lifecycle, enabling you to continuously buil
 deploy secure software. Essentially, it focuses on implementing a DevSecOps CI/CD pipeline in
 straightforward terms.
 
-Please use the `tomcat:8-jre11` docker image while building the source code. 
+Please use below docker image versions for the build and serving of the webapp:
+- Maven build `maven:3.6.3-openjdk-11-slim`
+- Tomcat server `tomcat:8-jre11` docker image while building the source code. 
