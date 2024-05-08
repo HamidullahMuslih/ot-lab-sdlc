@@ -10,3 +10,5 @@ CI/CD pipeline. This lab will equip you with the skills to incorporate security 
 throughout the software development lifecycle, enabling you to continuously build, test, and
 deploy secure software. Essentially, it focuses on implementing a DevSecOps CI/CD pipeline in
 straightforward terms.
+
+Please use the `tomcat:8-jre11` docker image while building the source code. 
